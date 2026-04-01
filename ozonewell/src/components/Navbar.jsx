@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './Navbar.css';
-import logoImg from '../assets/logoozon_nobg.png';
+import logoImg from '../assets/logoozon.jpeg';
 
 function Navbar({ theme, toggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navLinks = [
-    { icon: '🏠', text: 'Accueil', href: '#' },
+    { text: 'Accueil', href: '#' },
     { text: 'Produits', href: '#produits' },
     { text: 'Solutions', href: '#solutions' },
     { text: 'Catalogue', href: '#catalogue' },

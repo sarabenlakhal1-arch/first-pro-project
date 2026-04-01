@@ -52,8 +52,7 @@
 }
 
 .nav-link:hover {
-  background-color: var(--bg-light);
-  color: var(--accent-green);
+  color: rgb(6, 179, 6);
 }
 
 .nav-icon {

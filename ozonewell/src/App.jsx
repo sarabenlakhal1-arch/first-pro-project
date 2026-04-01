@@ -3,6 +3,9 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import HeroCarousel from './components/HeroCarousel';
 import TrustSection from './components/TrustSection';
+import Activite from './components/Activite';
+
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -22,6 +25,8 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <HeroCarousel />
       <TrustSection />
+      <Activite />
+      <Footer />
     </div>
   );
 }

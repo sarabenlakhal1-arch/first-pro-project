@@ -1,0 +1,126 @@
+.footer-dark {
+  background-color: #405d86;
+  color: #ffffff;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+.footer-top-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.footer-block {
+  flex: 1;
+  min-width: 250px;
+}
+
+.block-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Style Bloc Contact */
+.block-contact .contact-item {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #d1d5db;
+  text-align: center;
+}
+
+.block-contact a {
+  color: #10b981;
+  text-decoration: none;
+}
+
+.block-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Style Bloc Liens du site */
+.footer-nav-links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.footer-nav-links a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-nav-links a:hover {
+  color: #2da3e2;
+}
+
+/* Style Bloc Marque et Réseaux */
+.block-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-brand-logo {
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.social-network-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-network-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #374151;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-network-icons a:hover {
+  background-color: #10b981;
+  transform: translateY(-3px);
+}
+
+.social-network-icons svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Barre basse du Copyright */
+.footer-copyright-bar {
+  background-color: #334a6a;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  border-top: 1px solid #1e4344;
+}

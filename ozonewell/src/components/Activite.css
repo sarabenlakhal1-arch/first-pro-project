@@ -1,0 +1,116 @@
+.activite-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.activite-titre {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e3a8a; /* Bleu Roi foncé */
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Petit trait sous le titre */
+.activite-titre::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #10b981; /* Vert Émeraude */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.activite-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* S'adapte sur mobile */
+}
+
+.activite-colonne {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style des Grands Cercles */
+.cercle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  background-color: #f9fafb;
+  transition: transform 0.3s ease;
+}
+
+.cercle:hover {
+  transform: scale(1.05); /* Effet zoom au survol */
+}
+
+.cercle-vert {
+  border: 6px solid #10b95f; /* Bordure Verte */
+}
+
+.cercle-bleu {
+  border: 6px solid #25a2eb; /* Bordure Bleue Roi */
+}
+
+.cercle-contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4b5563;
+}
+
+.cercle-contenu svg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+}
+
+.cercle-vert svg {
+  color: #10b981;
+}
+
+.cercle-bleu svg {
+  color: #2563eb;
+}
+
+.cercle-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Titres et paragraphes sous les cercles */
+.colonne-titre {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.colonne-texte {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 768px) {
+  .activite-container {
+    gap: 40px;
+  }
+}
