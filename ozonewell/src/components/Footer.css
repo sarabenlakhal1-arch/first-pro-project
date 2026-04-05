@@ -10,7 +10,7 @@
 
 .footer-top-container {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
@@ -40,7 +40,7 @@
   line-height: 1.6;
   margin-bottom: 12px;
   color: #d1d5db;
-  text-align: center;
+  text-align: justify;
 }
 
 .block-contact a {

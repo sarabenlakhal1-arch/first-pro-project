@@ -1,34 +1,29 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
-import HeroCarousel from './components/HeroCarousel';
-import TrustSection from './components/TrustSection';
-import Activite from './components/Activite';
-
 import Footer from './components/Footer';
+import Home from './components/Home';
+import Contact from './components/Contact';
+import Catalogue from './components/Catalogue';
 import './App.css';
 
-function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
+export default function App() {
   return (
-    <div className="app">
-      <TopBar />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <HeroCarousel />
-      <TrustSection />
-      <Activite />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <TopBar />
+        <Navbar />
+        
+        {/* C'est ici que les pages s'échangent */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/catalogue" element={<Catalogue />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
-
-export default App;

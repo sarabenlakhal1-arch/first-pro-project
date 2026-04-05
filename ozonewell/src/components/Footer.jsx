@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../assets/logoozon.jpeg'; 
 
@@ -25,12 +26,12 @@ export default function Footer() {
         <div className="footer-block block-links">
           <h4 className="block-title">PLAN DU SITE</h4>
           <ul className="footer-nav-links">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/produits">Produits</a></li>
-            <li><a href="/solutions">Solutions</a></li>
-            <li><a href="/catalogue">Catalogue</a></li>
-            <li><a href="/entreprise">Entreprise</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/">Accueil</Link></li>
+            <li><Link to="/produits">Produits</Link></li>
+            <li><Link to="/solutions">Solutions</Link></li>
+            <li><Link to="/catalogue">Catalogue</Link></li>
+            <li><Link to="/entreprise">Entreprise</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 

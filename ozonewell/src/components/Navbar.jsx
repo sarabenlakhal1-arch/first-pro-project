@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logoImg from '../assets/logoozon.jpeg';
 
@@ -6,12 +7,12 @@ function Navbar({ theme, toggleTheme }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navLinks = [
-    { text: 'Accueil', href: '#' },
-    { text: 'Produits', href: '#produits' },
-    { text: 'Solutions', href: '#solutions' },
-    { text: 'Catalogue', href: '#catalogue' },
-    { text: 'Entreprise', href: '#entreprise' },
-    { text: 'Contact', href: '#contact' }
+    { text: 'Accueil', to: '/' },
+    { text: 'Produits', to: '/produits' },
+    { text: 'Solutions', to: '/solutions' },
+    { text: 'Catalogue', to: '/catalogue' },
+    { text: 'Entreprise', to: '/entreprise' },
+    { text: 'Contact', to: '/contact' }
   ];
 
   return (
@@ -24,10 +25,10 @@ function Navbar({ theme, toggleTheme }) {
         <ul className="nav-links">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.href} className="nav-link">
+              <Link to={link.to} className="nav-link">
                 {link.icon && <span className="nav-icon">{link.icon}</span>}
                 {link.text}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
