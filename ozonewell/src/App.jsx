@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Catalogue from './components/Catalogue';
+import Entreprise from './components/Entreprise';
 import './App.css';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/entreprise" element={<Entreprise />} />
         </Routes>
 
         <Footer />
