@@ -22,18 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-theme="dark"] {
-  --primary-blue: #238080;
-  --primary-blue-dark: #1A5F5F;
-  --accent-green: #2ECC71;
-  --accent-green-dark: #27AE60;
-  --text-dark: #f0f0f0;
-  --text-medium: #e0e0e0;
-  --text-light: #b0b0b0;
-  --bg-white: #626262e1;
-  --bg-light: #777373e1;
-  --border-light: #999999;
-}
+
 
 * {
   margin: 0;

@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Catalogue from './components/Catalogue';
 import Entreprise from './components/Entreprise';
+import Solutions from './components/Solutions';
 import './App.css';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/entreprise" element={<Entreprise />} />
+          <Route path="/solutions" element={<Solutions />} />
         </Routes>
 
         <Footer />
