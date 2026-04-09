@@ -1,53 +1,44 @@
+import React from 'react';
 import './TrustSection.css';
 
-function TrustSection() {
-  const trustItems = [
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M9 11l3 3L22 4"/>
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-        </svg>
-      ),
-      text: 'CERTIFICATION EUROPÉENNE'
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="8" r="7"/>
-          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-        </svg>
-      ),
-      text: 'QUALITÉ CERTIFIÉE'
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      ),
-      text: 'FABRICATION FRANÇAISE'
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-      ),
-      text: 'GARANTIE 5 ANS'
-    }
-  ];
+const trustData = [
+  {
+    title: "ISO 9001:2015",
+    description: "Management de la qualité certifié",
+    icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  },
+  {
+    title: "DIRECTIVES OMS",
+    description: "Conformité sanitaire mondiale",
+    icon: <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6v12M6 12h12" />
+  },
+  {
+    title: "EUO3TA MEMBER",
+    description: "Standard européen de l'ozone",
+    icon: <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+  },
+  {
+    title: "INTERECO BIO",
+    description: "Certification agriculture biologique",
+    icon: <path d="M12 3v19M5 8l7-5 7 5M5 16l7 5 7-5" />
+  }
+];
 
+function TrustSection() {
   return (
-    <section className="trust-section">
-      <div className="trust-container">
-        {trustItems.map((item, index) => (
-          <div key={index} className="trust-item">
-            <div className="trust-icon">
-              {item.icon}
+    <section className="trust-wrapper">
+      <div className="trust-grid">
+        {trustData.map((item, index) => (
+          <div key={index} className="trust-card">
+            <div className="trust-visual">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                {item.icon}
+              </svg>
             </div>
-            <span className="trust-text">{item.text}</span>
+            <div className="trust-info">
+              <h4 className="trust-label">{item.title}</h4>
+              <p className="trust-desc">{item.description}</p>
+            </div>
           </div>
         ))}
       </div>

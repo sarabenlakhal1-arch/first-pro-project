@@ -6,8 +6,8 @@
 .activite-titre {
   text-align: center;
   font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e3a8a; /* Bleu Roi foncé */
+  font-weight: 500;
+  color: #112764; /* Bleu Roi foncé */
   margin-bottom: 50px;
   position: relative;
 }
@@ -18,7 +18,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #10b981; /* Vert Émeraude */
+  background-color: #0da021; /* Vert Émeraude */
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -81,15 +81,15 @@
 }
 
 .cercle-vert svg {
-  color: #10b981;
+  color: #0e9d26;
 }
 
 .cercle-bleu svg {
-  color: #2563eb;
+  color: #026feb;
 }
 
 .cercle-label {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
@@ -97,7 +97,7 @@
 /* Titres et paragraphes sous les cercles */
 .colonne-titre {
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #1f2937;
   margin-bottom: 15px;
 }

@@ -7,71 +7,53 @@ export default function Footer() {
   const anneeActuelle = new Date().getFullYear();
 
   return (
-    <footer className="footer-dark">
-      <div className="footer-top-container">
+    <footer className="footer-main">
+      <div className="footer-container">
         
-        {/* --- BLOC 1 : COORDONNÉES (À GAUCHE) --- */}
-        <div className="footer-block block-contact">
-          <h4 className="block-title">OZONE WELL</h4>
-          <p className="contact-item">
-            80, rue Allal B. Ahmed Amkik -ex Ménilm. , Belvédère 20300 Casablanca - Maroc
-          </p>
-          <p className="contact-item">Tel. +212 X XX XX XX XX</p>
-          <p className="contact-item">
-            <a href="mailto:contact@ozonewell.com">contact@ozonewell.com</a>
-          </p>
+        <div className="footer-col footer-col-contact">
+          <h4 className="footer-h4">OZONEWELL</h4>
+          <div className="footer-contact-info">
+            <p>80, rue Allal B. Ahmed Amkik, Belvédère</p>
+            <p>20300 Casablanca - Maroc</p>
+            <div className="contact-details">
+              <span><strong>Tél:</strong> +212 (0) 5 22 24 99 32</span>
+              <span><strong>Fax:</strong> +212 (0) 5 22 24 70 95</span>
+              <span><strong>Email:</strong> commercial@ozonewell.com</span>
+            </div>
+          </div>
         </div>
 
-        {/* --- BLOC 2 : LIENS DU SITE (AU MILIEU) --- */}
-        <div className="footer-block block-links">
-          <h4 className="block-title">PLAN DU SITE</h4>
-          <ul className="footer-nav-links">
+        <div className="footer-col footer-col-nav">
+          <h4 className="footer-h4">Menu</h4>
+          <ul className="footer-links">
             <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/produits">Produits</Link></li>
             <li><Link to="/solutions">Solutions</Link></li>
-            <li><Link to="/catalogue">Catalogue</Link></li>
-            <li><Link to="/entreprise">Entreprise</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/catalogue">Documentation</Link></li>
+            <li><Link to="/entreprise">Certificats</Link></li>
           </ul>
         </div>
 
-        {/* --- BLOC 3 : LOGO & RÉSEAUX (À DROITE) --- */}
-        <div className="footer-block block-brand">
-          <div className="brand-logo-wrapper">
-            <img src={logo} alt="Logo OZONE WELL" className="footer-brand-logo" />
-          </div>
-          <h4 className="block-title">SUIVEZ-NOUS</h4>
-          <div className="social-network-icons">
-            {/* Facebook */}
-            <a href="https://www.facebook.com/ozonewell" target="_blank" rel="noopener noreferrer" title="Suivez-nous sur Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
+        <div className="footer-col footer-col-brand">
+          <img src={logo} alt="OZONEWELL" className="footer-logo" />
+          <div className="footer-socials">
+            <a href="https://linkedin.com/company/ozonewell" target="_blank" rel="noreferrer">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
-            {/* Instagram */}
-            <a href="https://www.instagram.com/ozonewell" target="_blank" rel="noopener noreferrer" title="Suivez-nous sur Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/company/ozonewell/" target="_blank" rel="noopener noreferrer" title="Suivez-nous sur LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
+            <a href="https://facebook.com/ozonewell" target="_blank" rel="noreferrer">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
           </div>
         </div>
-
       </div>
 
-      {/* --- SECTION BASSE : COPYRIGHT --- */}
-      <div className="footer-copyright-bar">
-        <p>© {anneeActuelle} OZONE WELL | Politique de confidentialité | Avis légal</p>
+      <div className="footer-bottom">
+        <div className="footer-bottom-content">
+          <p>© {anneeActuelle} OZONEWELL. Tous droits réservés.</p>
+          <div className="footer-legal">
+            <Link to="/mentions-legales">Mentions Légales</Link>
+            <Link to="/confidentialite">Confidentialité</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

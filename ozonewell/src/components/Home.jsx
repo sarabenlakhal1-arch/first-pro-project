@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <>
       <HeroCarousel />
-      <Partners />
-      <InfosOzone />
       <TrustSection />
+      <InfosOzone />
       <Activite />
+      <Partners />
     </>
   );
 }
