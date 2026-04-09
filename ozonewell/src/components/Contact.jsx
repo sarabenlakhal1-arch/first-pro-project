@@ -1,290 +1,128 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
+import logoOzone from '../assets/logoozon.jpeg'; 
 
 export default function Contact() {
-  // État pour le formulaire Client Particulier
-  const [formDataParticulier, setFormDataParticulier] = useState({
-    nom: '',
-    prenom: '',
-    email: '',
-    telephone: '',
-    message: ''
-  });
+  const form = useRef();
 
-  // État pour le formulaire Professionnel
-  const [formDataPro, setFormDataPro] = useState({
-    prenomNom: '',
-    societe: '',
-    secteur: '',
-    secteurPersonnalise: '',
-    telephone: '',
-    email: '',
-    commentaire: ''
-  });
-
-  // État pour afficher le champ secteur personnalisé
-  const [showSecteurPersonnalise, setShowSecteurPersonnalise] = useState(false);
-
-  // Gestion des changements pour le formulaire Particulier
-  const handleChangeParticulier = (e) => {
-    setFormDataParticulier({ ...formDataParticulier, [e.target.name]: e.target.value });
-  };
-
-  // Gestion des changements pour le formulaire Professionnel
-  const handleChangePro = (e) => {
-    const { name, value } = e.target;
-    setFormDataPro({ ...formDataPro, [name]: value });
-    
-    // Afficher le champ secteur personnalisé si "Autre" est sélectionné
-    if (name === 'secteur') {
-      setShowSecteurPersonnalise(value === 'Autre');
-    }
-  };
-
-  // Soumission du formulaire Particulier
-  const handleSubmitParticulier = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    alert("Formulaire Client Particulier envoyé avec succès !");
-  };
-
-  // Soumission du formulaire Professionnel
-  const handleSubmitPro = (e) => {
-    e.preventDefault();
-    alert("Formulaire Professionnel envoyé avec succès !");
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .then(() => {
+          alert("Message envoyé avec succès !");
+          form.current.reset();
+      }, (error) => {
+          alert("Erreur lors de l'envoi.");
+      });
   };
 
   return (
-    <div className="contact-page-container">
+    <div className="contact-wrapper">
       
-      {/* En-tête de la page */}
-      <div className="contact-header">
-        <h2>CONTACT</h2>
-        <hr></hr>
-      </div>
-      <br />
-      
-
-      {/* SECTION HAUT : Disposition 50/50 */}
-      <div className="contact-top-section">
-        
-        {/* MOITIÉ GAUCHE : Bureau Central */}
-        <div className="contact-left-half">
-          <div className="info-box">
-            <h3>Bureau Central</h3>
-            <p className="address">
-              80, rue Allal B. Ahmed Amkik -ex Ménilm.<br />
-              Belvédère 20300 Casablanca - Maroc
-            </p>
-            <p className="phone"><strong>Tel :</strong> +212 X XX XX XX XX</p>
-            <p className="email"><strong>Email :</strong> contact@ozonewell.com</p>
+      <div className="contact-hero-banner">
+          <div className="hero-overlay">
+            <h1>Contact</h1>
           </div>
-
-          <div className="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7153!2d-7.589!3d33.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzQyLjAiTiA3wrAzNScyMC40Ilc!5e0!3m2!1sfr!2sma!4v1700000000000" 
-              width="100%" 
-              height="400" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              title="Localisation OZONE WELL Belvédère"
-            ></iframe>
-          </div>
-        </div>
-
-        {/* MOITIÉ DROITE : Formulaire Client Particulier */}
-        <div className="contact-right-half">
-          <div className="form-block">
-            <div className="form-title-wrapper">
-              <span className="envelope-icon">✉</span>
-              <h3>Formulaire Client Particulier</h3>
-            </div>
-
-            <form onSubmit={handleSubmitParticulier} className="styled-form">
-              <div className="form-group">
-                <label>Nom</label>
-                <input 
-                  type="text" 
-                  name="nom" 
-                  value={formDataParticulier.nom} 
-                  onChange={handleChangeParticulier} 
-                  required 
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Nom de famille</label>
-                <input 
-                  type="text" 
-                  name="prenom" 
-                  value={formDataParticulier.prenom} 
-                  onChange={handleChangeParticulier} 
-                  required 
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  value={formDataParticulier.email} 
-                  onChange={handleChangeParticulier} 
-                  required 
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Numéro de téléphone</label>
-                <input 
-                  type="tel" 
-                  name="telephone" 
-                  value={formDataParticulier.telephone} 
-                  onChange={handleChangeParticulier} 
-                  required 
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Message</label>
-                <textarea 
-                  name="message" 
-                  value={formDataParticulier.message} 
-                  onChange={handleChangeParticulier} 
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-
-              <div className="privacy-notice">
-                <p>J'accepte la <a href="/politique">Politique de Confidentialité</a></p>
-              </div>
-
-              <button type="submit" className="submit-btn">Envoyer</button>
-            </form>
-          </div>
-        </div>
-
       </div>
 
-      {/* SÉPARATEUR DE SECTION */}
-      <div className="section-separator">
-        <div className="separator-line"></div>
-        <div className="separator-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
+      <div className="container">
+        <div className="contact-intro-text">
+          <br />
+          <p>Nous restons à votre entière disposition pour toute demande d'information complémentaire.</p>
         </div>
-        <div className="separator-line"></div>
-      </div>
 
-      {/* SECTION BAS : Formulaire Professionnel Centré */}
-      <div className="contact-bottom-section">
-        <div className="form-block form-pro-centered">
-          <div className="form-title-wrapper">
-            <span className="envelope-icon">✉</span>
-            <h3>Formulaire de Contact Professionnel</h3>
-          </div>
-
-          <form onSubmit={handleSubmitPro} className="styled-form">
-            <div className="form-group">
-              <label>Prénom et Nom*</label>
-              <input 
-                type="text" 
-                name="prenomNom" 
-                value={formDataPro.prenomNom} 
-                onChange={handleChangePro} 
-                required 
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Société*</label>
-              <input 
-                type="text" 
-                name="societe" 
-                value={formDataPro.societe} 
-                onChange={handleChangePro} 
-                required 
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Secteur d'activité</label>
-              <select 
-                name="secteur" 
-                value={formDataPro.secteur} 
-                onChange={handleChangePro}
-                className="form-select"
-              >
-                <option value="">Sélectionnez un secteur</option>
-                <option value="Hôtellerie">Hôtellerie</option>
-                <option value="Sanitaire/Médical">Sanitaire/Médical</option>
-                <option value="Établissement scolaire">Établissement scolaire</option>
-                <option value="Restauration">Restauration</option>
-                <option value="Agriculture">Agriculture</option>
-                <option value="Cliniques privées">Cliniques privées</option>
-                <option value="Blanchisseries industrielles">Blanchisseries industrielles</option>
-                <option value="Autre">Autre</option>
-              </select>
-            </div>
-
-            {/* Champ Secteur personnalisé - affiché seulement si "Autre" est sélectionné */}
-            {showSecteurPersonnalise && (
-              <div className="form-group">
-                <label>Secteur personnalisé</label>
-                <input 
-                  type="text" 
-                  name="secteurPersonnalise" 
-                  value={formDataPro.secteurPersonnalise} 
-                  onChange={handleChangePro} 
-                  placeholder="Précisez votre secteur d'activité"
-                />
+        <section className="form-section-oz">
+          <h2 className="oz-title">Enregistrez votre demande</h2>
+          <form ref={form} onSubmit={sendEmail} className="oz-real-form">
+            <div className="oz-row">
+              <div className="oz-col">
+                <label>Nature de votre demande *</label>
+                <select name="request_type" required>
+                  <option value="Demande de devis">Demande de devis</option>
+                  <option value="Demande d'information">Demande d'information</option>
+                  <option value="Demande de fiche technique">Demande de fiche technique</option>
+                  <option value="Autre">Autre</option>
+                </select>
               </div>
-            )}
-
-            <div className="form-group">
-              <label>Téléphone*</label>
-              <input 
-                type="tel" 
-                name="telephone" 
-                value={formDataPro.telephone} 
-                onChange={handleChangePro} 
-                required 
-              />
+              <div className="oz-col">
+                <label>Nom complet *</label>
+                <input type="text" name="user_name" placeholder="Votre nom" required />
+              </div>
             </div>
 
-            <div className="form-group">
-              <label>Votre Email*</label>
-              <input 
-                type="email" 
-                name="email" 
-                value={formDataPro.email} 
-                onChange={handleChangePro} 
-                required 
-              />
+            <div className="oz-row">
+              <div className="oz-col">
+                <label>Adresse email *</label>
+                <input type="email" name="user_email" placeholder="votre@email.com" required />
+              </div>
+              <div className="oz-col">
+                <label>Société</label>
+                <input type="text" name="company" placeholder="Nom de l'entreprise" />
+              </div>
             </div>
 
-            <div className="form-group">
-              <label>Commentaire</label>
-              <textarea 
-                name="commentaire" 
-                value={formDataPro.commentaire} 
-                onChange={handleChangePro} 
-                rows="5"
-              ></textarea>
+            <div className="oz-row">
+              <div className="oz-col">
+                <label>Téléphone *</label>
+                <input type="tel" name="phone" placeholder="+212..." required />
+              </div>
             </div>
 
-            <div className="privacy-notice">
-              <p>J'accepte la <a href="/politique">Politique de Confidentialité</a></p>
+            <div className="oz-full-row">
+              <label>Message *</label>
+              <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
             </div>
 
-            <button type="submit" className="submit-btn submit-btn-centered">Envoyer</button>
+            <button type="submit" className="oz-submit-btn">Envoyer</button>
           </form>
-        </div>
-      </div>
+        </section>
 
+        <section className="map-info-split">
+          <div className="split-left-map">
+            <iframe 
+              title="Localisation Ozonewell"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.633455799732!2d-7.5956!3d33.5951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzQyLjQiTiA3wrAzNSc0NC4yIlc!5e0!3m2!1sfr!2sma!4v1617970000000!5m2!1sfr!2sma"
+              width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
+            </iframe>
+          </div>
+
+          <div className="split-right-details">
+            <div className="details-content">
+              
+              <div className="detail-block">
+                <h4>Siège Social</h4>
+                <br />
+                <br />
+                <div className="detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <p>80, rue Allal B. Ahmed Amkik, Belvédère 20300 Casablanca - Maroc</p>
+                </div>
+              </div>
+
+              <div className="detail-block">
+                <div className="detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                  <p>Tel : +212 (0) 5 22 24 99 32</p>
+                </div>
+                <br />
+                <div className="detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <a href="mailto:commercial@ozonewell.com">commercial@ozonewell.com</a>
+                </div>
+              </div>
+
+              <div className="detail-block">
+                <div className="detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <p>Lundi - Vendredi : 08:00 - 18:00</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
