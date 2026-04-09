@@ -29,8 +29,9 @@ function Navbar() {
         <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
           <li className="nav-item-li"><Link to="/" className="nav-link-item">Accueil</Link></li>
           <li className="nav-item-li"><Link to="/solutions" className="nav-link-item">Solutions</Link></li>
-          <li className="nav-item-li"><Link to="/catalogue" className="nav-link-item">Documentation</Link></li>
-          <li className="nav-item-li"><Link to="/entreprise" className="nav-link-item">Certificats</Link></li>
+          <li className="nav-item-li"><Link to="/documentation" className="nav-link-item">Documentation</Link></li>
+          <li className="nav-item-li"><Link to="/entreprise" className="nav-link-item">Entreprise</Link></li>
+          <li className="nav-item-li"><Link to="/certificats" className="nav-link-item">Certificats</Link></li>
           <li className="nav-item-li">
             <Link to="/contact" className="nav-btn-contact-mobile">Contactez-nous</Link>
           </li>

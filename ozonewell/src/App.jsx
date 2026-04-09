@@ -8,6 +8,8 @@ import Contact from './components/Contact';
 import Catalogue from './components/Catalogue';
 import Entreprise from './components/Entreprise';
 import Solutions from './components/Solutions';
+import Certificats from './components/Certificats';
+import Documentation from './components/Documentation';
 import './App.css';
 
 export default function App() {
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/entreprise" element={<Entreprise />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/certificats" element={<Certificats />} />
+          <Route path="/documentation" element={<Documentation />} />
         </Routes>
 
         <Footer />
