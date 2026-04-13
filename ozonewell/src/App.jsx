@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Catalogue from './components/Catalogue';
-import Entreprise from './components/Entreprise';
 import Solutions from './components/Solutions';
 import Certificats from './components/Certificats';
 import Documentation from './components/Documentation';
@@ -24,7 +23,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/entreprise" element={<Entreprise />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/certificats" element={<Certificats />} />
           <Route path="/documentation" element={<Documentation />} />

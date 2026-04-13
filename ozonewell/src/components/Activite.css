@@ -60,18 +60,30 @@
 }
 
 .cercle-vert {
-  border: 6px solid #10b95f; /* Bordure Verte */
+  border: 6px solid #0a7d1d; /* Bordure Verte */
+
+}
+
+.cercle-vert:hover {
+
+  background-color: #95daa778;
+
 }
 
 .cercle-bleu {
-  border: 6px solid #25a2eb; /* Bordure Bleue Roi */
+  border: 6px solid #1f5ba0; /* Bordure Bleue Roi */
+}
+.cercle-bleu:hover {
+
+  background-color: #9dcde283;
+
 }
 
 .cercle-contenu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #4b5563;
+  color: #15181c;
 }
 
 .cercle-contenu svg {
@@ -81,17 +93,19 @@
 }
 
 .cercle-vert svg {
-  color: #0e9d26;
+  color: #0a7d1d;
 }
 
 .cercle-bleu svg {
-  color: #026feb;
+  color: #1f5ba0;
 }
 
 .cercle-label {
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 1px;
+  text-transform:uppercase ;
+
 }
 
 /* Titres et paragraphes sous les cercles */

@@ -1,92 +1,102 @@
-.ozone-expert-section {
-  padding: 100px 0;
-  background-color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500;700&display=swap');
+
+.ozone-catalog-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e0f2fe;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
 }
 
-.ozone-expert-container {
+.catalog-content-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  gap: 40px;
   padding: 0 40px;
 }
 
-.ozone-expert-header {
-  margin-bottom: 80px;
-  border-left: 4px solid #0A4D92;
-  padding-left: 30px;
+.catalog-left-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.expert-headline {
-  font-size: 42px;
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+.catalog-vertical-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 100px;
+  color: rgba(10, 78, 146, 0.772);
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  margin: 0;
 }
 
-.oms-quote {
-  font-size: 19px;
+.catalog-main-content {
+  flex: 1;
+}
+
+.oms-header-block {
+  background-color: #0A4D92;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 25px rgba(10, 77, 146, 0.1);
+}
+
+.oms-header-block p {
+  font-size: 18px;
   line-height: 1.6;
-  color: #475569;
-  max-width: 900px;
+  margin: 0;
 }
 
-.oms-quote strong {
-  color: #0A4D92;
+.oms-header-block strong {
+  color: #bee5ff;
 }
 
-.ozone-expert-grid {
+.catalog-features-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
 
-.expert-card {
-  padding: 40px;
-  background: #f8fafc;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.expert-card:hover {
-  background: #ffffff;
-  border-color: #0A4D92;
-  box-shadow: 0 20px 40px rgba(10, 77, 146, 0.06);
-  transform: translateY(-5px);
+.feature-icon-box {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
 }
 
-.icon-container {
-  width: 50px;
-  height: 50px;
-  color: #0A4D92;
-  margin-bottom: 25px;
-}
-
-.icon-container svg {
+.feature-icon-box img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
-.expert-card h4 {
-  font-size: 22px;
+.feature-info h4 {
+  font-size: 20px;
   font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 15px;
+  color: #0A4D92;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
 }
 
-.expert-card p {
+.feature-info p {
   font-size: 15px;
-  color: #64748b;
-  line-height: 1.6;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
 }
 
-@media (max-width: 900px) {
-  .ozone-expert-grid {
-    grid-template-columns: 1fr;
-  }
-  .expert-headline {
-    font-size: 32px;
-  }
+@media (max-width: 992px) {
+  .catalog-features-list { grid-template-columns: 1fr; }
+  .catalog-left-sidebar { display: none; }
+  .catalog-content-container { padding: 0 20px; }
 }
