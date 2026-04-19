@@ -126,6 +126,52 @@
     right: 0;
   }
 
+/* --- Ajoutez ou modifiez ces règles dans votre fichier CSS --- */
+
+@media (max-width: 850px) {
+  /* On s'assure que l'item solution prend toute la largeur comme les autres */
+  .nav-item-solutions {
+    width: 100%;
+    position: relative;
+  }
+
+  /* Cachez le dropdown complexe sur mobile pour éviter les décalages, 
+     ou ajustez-le pour qu'il ne soit pas en 'absolute' */
+  .main-dropdown {
+    position: static; /* Important : pour qu'il pousse le contenu vers le bas au lieu de flotter */
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--primary-blue);
+    margin-left: 20px;
+    background: #f8fafc;
+  }
+
+  /* Force l'alignement du texte 'Solutions' */
+  .nav-item-solutions .nav-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Ajustement pour éviter que le survol n'affiche le menu sur mobile 
+   si vous ne voulez pas qu'il s'ouvre tout seul */
+@media (min-width: 851px) {
+  .nav-item-solutions:hover .main-dropdown {
+    display: block;
+  }
+}
+
+/* Correction de la classe dropdown pour la cohérence */
+.nav-link-item {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+  display: block; /* S'assure que le lien prend toute la place */
+}  
   .nav-item-li {
     width: 100%;
     border-bottom: 1px solid #f1f5f9;
@@ -151,4 +197,96 @@
   .logo-img {
     height: 180px;
   }
+}
+
+/* DROPDOWN LINK STYLE */
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ACCORDION DROPDOWN STYLES */
+
+.main-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 280px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item-solutions:hover .main-dropdown {
+  display: block;
+}
+
+.topic-link {
+  display: block;
+  padding: 12px 20px;
+  background: #f4f7fa;
+  font-weight: 500;
+  color: #0A4D92;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.topic_link:hover {
+  background: #0A4D92;
+  color: #ffffff;
+}
+
+.sub-level {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.sub-level a, .accordion-label {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.accordion-content {
+  list-style: none;
+  padding: 0;
+  background: #fafafa;
+  display: none;
+  border-left: 4px solid #0071e3;
+}
+
+.has-accordion:hover .accordion-content {
+  display: block;
+}
+
+.accordion-content a {
+  padding: 8px 35px;
+  font-size: 13px;
+  color: #555;
+}
+
+.sub-level a:hover, .accordion-label:hover, .accordion-content a:hover {
+  background-color: #f0f7ff;
+  color: #0071e3;
+}
+
+.has-accordion .accordion-label::after {
+  content: '▾';
+  float: right;
+  opacity: 0.5;
 }

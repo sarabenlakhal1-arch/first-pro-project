@@ -8,7 +8,7 @@ import sportImg from '../assets/photozon/sport.jpeg';
 import santeImg from '../assets/photozon/sante.jpeg';
 import travailImg from '../assets/photozon/travail.jpeg';
 import commerceImg from '../assets/photozon/commerce.jpeg';
-import coiffeurImg from '../assets/photozon/coiffeur.jpeg';
+import coiffeurImg from '../assets/photozon/coiffeur.png';
 
 function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,7 +48,6 @@ function HeroCarousel() {
             </div>
             <div className="slide-content">
               <div className="slide-text-wrapper">
-                <h2 className="slide-category">NOTRE EXPERTISE</h2>
                 <h1 className="slide-title">{slide.title}</h1>
                 <div className="slide-divider"></div>
                 <p className="slide-subtitle">{slide.subtitle}</p>

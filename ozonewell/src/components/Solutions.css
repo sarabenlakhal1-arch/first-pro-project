@@ -1,126 +1,147 @@
-:root {
-  --primary-blue: #0A4D92;
-  --accent-green: #10B981;
-  --text-dark: #1e293b;
-  --text-gray: #475569;
-  --bg-light: #f8fafc;
-  --border-color: #e2e8f0;
-}
-
-.solutions-page {
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  background-color: #ffffff;
-  min-height: 100vh;
-}
-
-.solutions-hero {
-  background: linear-gradient(rgba(10, 77, 146, 0.9), rgba(30, 58, 138, 0.8));
-  padding: 80px 20px;
-  text-align: center;
-  color: white;
-}
-
-.solutions-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-}
-
-.solutions-hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
 .solutions-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  background-color: #fff;
 }
 
-.solutions-grid {
+.main-page-title {
+  color: #0A4D92;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+/* Styles pour la nouvelle section d'introduction */
+.intro-section {
+  margin-bottom: 80px;
+  padding: 40px 0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.intro-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.intro-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.intro-card:hover {
+  transform: translateY(-5px);
+}
+
+.intro-img-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px auto;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #00d4ff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-card h4 {
+  font-size: 14px;
+  color: #0A4D92;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Styles des sections détaillées */
+.group-header {
+  background-color: #f8f9fa;
+  color: #0A4D92;
+  padding: 15px 20px;
+  font-size: 1.3rem;
+  border-left: 5px solid #00d4ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 40px 0 30px 0;
+  border-radius: 4px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
 }
 
-.solution-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 30px;
+.asp-card {
+  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.solution-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-blue);
-}
-
-.solution-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.solution-card h3 {
-  color: var(--text-dark);
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
-
-.solution-card p {
-  color: var(--text-gray);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.solution-features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.solution-features li {
-  color: var(--text-gray);
-  padding: 8px 0;
-  border-bottom: 1px solid #f1f5f9;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
 }
 
-.solution-features li::before {
-  content: "✓";
-  color: var(--accent-green);
-  font-weight: bold;
+.asp-card:hover {
+  transform: scale(1.03);
 }
 
-.solution-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--primary-blue), #1e3a8a);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.asp-card-img-container {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.solution-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(10, 77, 146, 0.3);
+.asp-card:hover .asp-card-img-container {
+  border-color: #00d4ff;
+}
+
+.asp-card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.asp-card-footer {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.asp-card-footer h3 {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
-  .solutions-hero {
-    padding: 60px 20px;
+  .main-page-title {
+    font-size: 1.5rem;
   }
-  
-  .solutions-hero h1 {
-    font-size: 2rem;
+
+  .group-header {
+    font-size: 1.1rem;
   }
-  
-  .solutions-container {
-    padding: 40px 20px;
+
+  .grid-layout {
+    gap: 20px;
+  }
+
+  .intro-img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .intro-card h4 {
+    font-size: 12px;
   }
 }

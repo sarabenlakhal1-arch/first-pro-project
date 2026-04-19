@@ -1,0 +1,127 @@
+.solution-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #fff;
+  min-height: 60vh;
+}
+
+.solution-detail-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.solution-detail-header h1 {
+  color: #0A4D92;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.solution-detail-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-detail-img {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.solution-detail-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.solution-detail-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.solution-detail-text .description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.solution-detail-text .additional-info {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #00d4ff;
+  color: #0A4D92;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 212, 255, 0.3);
+}
+
+.contact-btn:hover {
+  background-color: #0A4D92;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(10, 77, 146, 0.3);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: #0A4D92;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: #00d4ff;
+}
+
+.solution-detail-not-found {
+  text-align: center;
+  padding: 120px 20px;
+  background-color: #fff;
+  min-height: 60vh;
+}
+
+.solution-detail-not-found h1 {
+  color: #0A4D92;
+  margin-bottom: 20px;
+}
+
+.solution-detail-not-found p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .solution-detail-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .solution-detail-content {
+    gap: 30px;
+  }
+
+  .solution-detail-img {
+    min-width: 100%;
+  }
+
+  .contact-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}

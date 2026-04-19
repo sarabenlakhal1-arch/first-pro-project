@@ -1,28 +1,30 @@
 import React, { useEffect } from 'react';
 import './Documentation.css';
 
+// Importations des images (Chaque image est importée une seule fois)
 import imgCommerce from '../assets/photozon/commerce.jpeg';
 import imgCafe from '../assets/photozon/cafe.jpeg';
 import imgSante from '../assets/photozon/sante.jpeg';
-import imgHotel from '../assets/photozon/hotel.jpeg';
-import imgCoiffure from '../assets/photozon/coiffeur.jpeg';
+import imgHotel from '../assets/photozon/hotel.jpeg'; 
+import imgCoiffure from '../assets/photozon/coiffeur.png';
 import imgEcole from '../assets/photozon/school.jpeg';
 import imgTravail from '../assets/photozon/travail.jpeg';
 import imgCuisine from '../assets/photozon/cuisine.jpeg';
 import imgEau from '../assets/photozon/eau.jpeg';
 import imgAir from '../assets/photozon/air.jpeg';
 
+// Tableau UNIQUE : Chaque id est unique (1 à 10) et chaque fichier est cité une seule fois
 const brochures = [
-  { id: 1, title: "Commerces & ERP", file: "COMMERCE.pdf", img: imgCommerce },
+  { id: 1, title: "Hôtellerie", file: "HOTELLERIE.pdf", img: imgHotel },
   { id: 2, title: "Cafés & Restaurants", file: "CAFE RESTAURANT.pdf", img: imgCafe },
   { id: 3, title: "Santé & Médical", file: "SANTE-MEDICAL.pdf", img: imgSante },
-  { id: 4, title: "Hôtellerie", file: "HOTELLERIE.pdf", img: imgHotel },
-  { id: 5, title: "Salons de Coiffure", file: "SALON DE COIFFURE.pdf", img: imgCoiffure },
-  { id: 6, title: "Établissements Scolaires", file: "ETABLISSMENT SCOLAIRE.pdf", img: imgEcole },
-  { id: 7, title: "Environnement de Travail", file: "ENVIRONNEMENT DE TRAVAIL.pdf", img: imgTravail },
-  { id: 8, title: "Cuisine (Modèle SP24)", file: "CUISINE Modele SP24.pdf", img: imgCuisine },
-  { id: 8, title: "Eau Ozonée", file: "EAU A4.pdf", img: imgEau },
-  { id: 8, title: "Air Ozonée", file: "AIR A4.pdf", img: imgAir }
+  { id: 4, title: "Environnement de Travail", file: "ENVIRONNEMENT DE TRAVAIL.pdf", img: imgTravail },
+  { id: 5, title: "Établissements Scolaires", file: "ETABLISSMENT SCOLAIRE.pdf", img: imgEcole },
+  { id: 6, title: "Cuisine", file: "CUISINE Modele SP24.pdf", img: imgCuisine },
+  { id: 7, title: "Commerces & ERP", file: "COMMERCE.pdf", img: imgCommerce },
+  { id: 8, title: "Salons de Coiffure", file: "SALON DE COIFFURE.pdf", img: imgCoiffure },
+  { id: 9, title: "Air ambiant", file: "AIR A4.pdf", img: imgAir },
+  { id: 10, title: "Agriculture", file: "EAU A4.pdf", img: imgEau }
 ];
 
 export default function Documentation() {
@@ -30,19 +32,16 @@ export default function Documentation() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const docBody = document.querySelector('.doc-wrapper');
-      
-      if (scrollY > 50) {
-        docBody.classList.add('scrolled-grain');
-      } else {
-        docBody.classList.remove('scrolled-grain');
+      if (docBody) {
+        if (scrollY > 50) {
+          docBody.classList.add('scrolled-grain');
+        } else {
+          docBody.classList.remove('scrolled-grain');
+        }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -80,7 +79,7 @@ export default function Documentation() {
                   rel="noreferrer" 
                   className="btn-action view"
                 >
-                  Visualiser
+                  Visualiser la brochure
                 </a>
                 <a 
                   href={`/documentation/${brochure.file}`}

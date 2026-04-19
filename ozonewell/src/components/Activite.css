@@ -1,130 +1,137 @@
-.activite-section {
-  padding: 60px 20px;
-  background-color: #ffffff;
-}
-
-.activite-titre {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: #112764; /* Bleu Roi foncé */
-  margin-bottom: 50px;
+.activite-modern-section {
+  padding: 120px 20px;
   position: relative;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Petit trait sous le titre */
-.activite-titre::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: #0da021; /* Vert Émeraude */
-  margin: 10px auto 0;
-  border-radius: 2px;
+.background-blobs {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
 }
+
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(80px);
+  opacity: 0.15;
+  border-radius: 50%;
+}
+
+.blob-air { top: 10%; left: 10%; background: #0071e3; }
+.blob-eau { bottom: 10%; right: 10%; background: #00d4ff; }
 
 .activite-container {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap; /* S'adapte sur mobile */
+  position: relative;
+  z-index: 1;
 }
 
-.activite-colonne {
-  flex: 1;
-  min-width: 300px;
-  max-width: 450px;
+.activite-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title-modern {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #0404aa;
+}
+
+.subtitle-modern {
+  font-size: 1.2rem;
+  color: #86868b;
+  margin-top: 10px;
+}
+
+.glass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+.glass-card {
+  padding: 50px;
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* Style des Grands Cercles */
-.cercle {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card-air {
+  background: rgba(0, 127, 254, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 113, 227, 0.1);
+}
+
+.card-eau {
+  background: rgba(0, 255, 17, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+}
+
+.glass-card:hover {
+  transform: scale(1.02) translateY(-10px);
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
   margin-bottom: 25px;
-  background-color: #f9fafb;
-  transition: transform 0.3s ease;
 }
 
-.cercle:hover {
-  transform: scale(1.05); /* Effet zoom au survol */
+.svg-icon {
+  width: 100%;
+  height: 100%;
+  stroke: #004b96;
 }
 
-.cercle-vert {
-  border: 6px solid #0a7d1d; /* Bordure Verte */
-
+.card-eau .svg-icon {
+  stroke: #0b8219;
 }
 
-.cercle-vert:hover {
-
-  background-color: #95daa778;
-
-}
-
-.cercle-bleu {
-  border: 6px solid #1f5ba0; /* Bordure Bleue Roi */
-}
-.cercle-bleu:hover {
-
-  background-color: #9dcde283;
-
-}
-
-.cercle-contenu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #15181c;
-}
-
-.cercle-contenu svg {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 8px;
-}
-
-.cercle-vert svg {
-  color: #0a7d1d;
-}
-
-.cercle-bleu svg {
-  color: #1f5ba0;
-}
-
-.cercle-label {
+.label-ozone {
+  font-size: 1.8rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  text-transform:uppercase ;
-
+  text-transform: uppercase;
+  color: #1d1d1f;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-/* Titres et paragraphes sous les cercles */
-.colonne-titre {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 15px;
-}
-
-.colonne-texte {
-  font-size: 1rem;
-  color: #4b5563;
+.card-description {
+  font-size: 1.05rem;
   line-height: 1.6;
+  color: #424245;
+  margin-bottom: 40px;
+  min-height: 120px;
 }
 
-/* Media Query pour les petits écrans */
+.btn-glass {
+  background: #1d1d1f;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.btn-glass:hover {
+  background: #0071e3;
+  box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+}
+
 @media (max-width: 768px) {
-  .activite-container {
-    gap: 40px;
-  }
+  .glass-grid { grid-template-columns: 1fr; }
+  .title-modern { font-size: 2.2rem; }
 }

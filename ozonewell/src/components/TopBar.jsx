@@ -14,12 +14,12 @@ function TopBar() {
             <span className="bold-text">+212 (5) 22 24 99 32</span>
           </a>
           <span className="separator">|</span>
-          <a href="mailto:contact@ozonewell.com" className="contact-item">
+          <a href="mailto:commercial@ozonewell.com" className="contact-item">
             <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            <span>contact@ozonewell.com</span>
+            <span>commercial@ozonewell.com</span>
           </a>
         </div>
 
@@ -29,7 +29,7 @@ function TopBar() {
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            <span>Lun - Ven : 08:30 - 18:00</span>
+            <span>Lun - Ven : 08:30 - 17:30</span>
           </div>
           <span className="separator hide-mobile"></span>
           <div className="info-item">

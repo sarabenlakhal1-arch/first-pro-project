@@ -124,7 +124,7 @@ export default function Contact() {
                 <h4>Siège Social</h4>
                 <div className="detail-row">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <p>80, rue Allal B. Ahmed Amkik, Belvédère 20300 Casablanca - Maroc</p>
+                  <p>80, rue Allal Ben Ahmed Amkik, Belvédère 20300 Casablanca - Maroc</p>
                 </div>
               </div>
 

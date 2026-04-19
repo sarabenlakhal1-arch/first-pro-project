@@ -4,32 +4,28 @@ import './Certificats.css';
 const certificates = [
   {
     id: 1,
-    title: "ISO 9001:2015",
-    org: "BUREAU VERITAS",
+    title: "BUREAU VERITAS ISO 9001:2015",
     desc: "Certification internationale pour la conception, fabrication et maintenance d'équipements de désinfection par ozone.",
     category: "Qualité",
     file: "/certificats/CERTIFICADO ISO ESPAÑOL.pdf"
   },
   {
     id: 2,
-    title: "Lignes Directrices Air",
-    org: "OMS (WHO)",
+    title: "OMS (WHO)",
     desc: "Conformité aux seuils mondiaux de sécurité pour la qualité de l'air et les concentrations d'ozone (Mise à jour 2005).",
     category: "Santé",
     file: "/certificats/OMS WHO_SDE_PHE_OEH_06.02_fre.pdf"
   },
   {
     id: 3,
-    title: "Agriculture Écologique",
-    org: "INTERECO",
+    title: "INTERECO",
     desc: "Certificat de produit utilisable en agriculture biologique selon le règlement européen (UE) 2018/848.",
     category: "Écologie",
     file: "/certificats/Certificado INTERECO 021023 a 300625.pdf"
   },
   {
     id: 4,
-    title: "Spécifications Techniques",
-    org: "EUO3TA",
+    title: "EUO3TA",
     desc: "Documentation technique et validation des standards de fabrication pour les solutions d'ozonisation industrielle.",
     category: "Technique",
     file: "/certificats/euo3ta.org asp certificado.pdf"
@@ -41,13 +37,8 @@ export default function Certificats() {
     <div className="cert-page-wrapper">
       <header className="cert-header">
         <div className="header-content">
-          <span className="subtitle">Normes & Standards Internationaux</span>
           <h1>Certifications & Conformité</h1>
           <div className="header-line"></div>
-          <p>
-            Ozonewell garantit l'excellence de ses technologies à travers des certifications 
-            reconnues mondialement pour leur rigueur et leur fiabilité.
-          </p>
         </div>
       </header>
 

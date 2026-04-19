@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="footer-col footer-col-contact">
           <h4 className="footer-h4">OZONEWELL</h4>
           <div className="footer-contact-info">
-            <p>80, rue Allal B. Ahmed Amkik, Belvédère</p>
+            <p>80, rue Allal Ben Ahmed Amkik, Belvédère</p>
             <p>20300 Casablanca - Maroc</p>
             <div className="contact-details">
               <span><strong>Tél:</strong> +212 (5) 22 24 99 32</span>
