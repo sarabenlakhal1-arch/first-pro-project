@@ -16,6 +16,11 @@ import EtabOzoneDetails from './components/EtabOzoneDetails';
 import CuisineOzoneDetails from './components/CuisineOzoneDetails';
 import HorecaOzoneDetails from './components/HorecaOzoneDetails';
 import CliniqueOzoneDetails from './components/CliniqueOzoneDetails';
+import HotelOzoneDetails from './components/HotelOzoneDetails';
+import EcoleOzoneDetails from './components/EcoleOzoneDetails';
+import SportOzoneDetails from './components/SportOzoneDetails';
+import CoiffeurOzoneDetails from './components/CoiffeurOzoneDetails';
+import FroidOzoneDetails from './components/FroidOzoneDetails';
 import Certificats from './components/Certificats';
 import Documentation from './components/Documentation';
 import './App.css';
@@ -37,10 +42,16 @@ export default function App() {
           <Route path="/solutions/eau-ozone" element={<EauOzoneDetails />} />
           <Route path="/solutions/agroalimentaire" element={<IndustOzoneDetails />} />
           <Route path="/solutions/agriculture" element={<AgriOzoneDetails />} />
-          <Route path="/solutions/etablissement" element={<EtabOzoneDetails />} />
+          <Route path="/solutions/bureau" element={<EtabOzoneDetails />} />
           <Route path="/solutions/cuisine" element={<CuisineOzoneDetails />} />
           <Route path="/solutions/horeca" element={<HorecaOzoneDetails />} />
           <Route path="/solutions/clinique" element={<CliniqueOzoneDetails />} />
+          <Route path="/solutions/hotel-ozone" element={<HotelOzoneDetails />} />
+          <Route path="/solutions/ecole" element={<EcoleOzoneDetails />} />
+          <Route path="/solutions/sport" element={<SportOzoneDetails />} />
+          <Route path="/solutions/coiffure" element={<CoiffeurOzoneDetails />} />
+          <Route path="/solutions/chambres-froides" element={<FroidOzoneDetails />} />
+
           <Route path="/solutions/:type" element={<SolutionDetail />} />
           <Route path="/certificats" element={<Certificats />} />
           <Route path="/documentation" element={<Documentation />} />

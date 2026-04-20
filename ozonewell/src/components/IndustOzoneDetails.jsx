@@ -24,7 +24,7 @@ const IndustOzoneDetails = () => {
         <div className="indust-text-content">
           <h2 className="indust-slogan-blue">
             Ozone sur mesure : efficacité et zéro déchet. <br />
-            <span>Conception et fabrication réalisées en interne en Espagne.</span>
+            <span>Conception et fabrication réalisées en interne</span>
           </h2>
           <ul className="indust-list">
             <li>Générateurs d'ozone industriels pour systèmes à air, à eau et mixtes.</li>
@@ -69,7 +69,7 @@ const IndustOzoneDetails = () => {
 
       <div className="indust-footer">
         <button className="indust-btn-blue" onClick={() => navigate('/contact')}>
-          DEMANDER UNE SOLUTION PERSONNALISÉE
+          DEMANDER UN DEVIS
         </button>
       </div>
 

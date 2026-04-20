@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
-import logoOzone from '../assets/logoozon.jpeg'; 
 
 export default function Contact() {
   // 1. Référence pour le formulaire

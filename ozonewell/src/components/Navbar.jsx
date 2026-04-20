@@ -39,27 +39,27 @@ function Navbar() {
               
 
 
-               <li className="topic-group">
-                 <Link to="/solutions/air-ozone" className="topic-link">air ozonné</Link>
-                 <ul className="sub-level">
-                   <li className="has-accordion">
-                     <span className="accordion-label">Industrie</span>
-                     <ul className="accordion-content">
-                       <li><Link to="/solutions/agroalimentaire">Industrie Agroalimentaire</Link></li>
-                     </ul>
-                   </li>
-                   <li className="has-accordion">
-                     <span className="accordion-label">Établissement</span>
-                     <ul className="accordion-content">
-                       <li><Link to="/solutions/hotel">Hôtel</Link></li>
-                       <li><Link to="/solutions/sante">Santé Médical</Link></li>
-                       <li><Link to="/solutions/ecole">École</Link></li>
-                       <li><Link to="/solutions/sport">Salle de sport</Link></li>
-                       <li><Link to="/solutions/travail">Environnement de travail</Link></li>
-                     </ul>
-                   </li>
-                 </ul>
-               </li>
+                <li className="topic-group">
+                  <Link to="/solutions/air-ozone" className="topic-link">air ozonné</Link>
+                  <ul className="sub-level">
+                    <li className="has-accordion">
+                      <span className="accordion-label">Industrie</span>
+                      <ul className="accordion-content">
+                        <li><Link to="/solutions/agroalimentaire">Industrie Agroalimentaire</Link></li>
+                      </ul>
+                    </li>
+                    <li className="has-accordion">
+                      <span className="accordion-label">Établissement</span>
+                      <ul className="accordion-content">
+                        <li><Link to="/solutions/hotel-ozone">Hôtel</Link></li>
+                        <li><Link to="/solutions/sante">Santé Médical</Link></li>
+                        <li><Link to="/solutions/ecole">École</Link></li>
+                        <li><Link to="/solutions/sport">Salle de sport</Link></li>
+                        <li><Link to="/solutions/travail">Environnement de travail</Link></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
 
                <li className="topic-group">
                  <Link to="/solutions/eau-ozone" className="topic-link">eau ozonnée</Link>
