@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './FroidOzoneDetails.css';
 
 // Images existantes dans assets/photozon/
-import imgChambreFroideHero from '../assets/photozon/chambre.png';
-import imgAlimentaireCercle from '../assets/photozon/etablissement.png';
+import imgChambreFroideHero from '../assets/photozon/conserv.png';
+import imgAlimentaireCercle from '../assets/photozon/chambre.png';
 
 const FroidOzoneDetails = () => {
   const navigate = useNavigate();

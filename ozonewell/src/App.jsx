@@ -23,16 +23,19 @@ import CoiffeurOzoneDetails from './components/CoiffeurOzoneDetails';
 import FroidOzoneDetails from './components/FroidOzoneDetails';
 import Certificats from './components/Certificats';
 import Documentation from './components/Documentation';
+import ScrollToTop from './components/ScrollToTop'; // Import de votre fonction
 import './App.css';
 
 export default function App() {
   return (
     <Router>
+      {/* Appel de la fonction de scroll ici */}
+      <ScrollToTop />
+
       <div className="app">
         <TopBar />
         <Navbar />
         
-        {/* C'est ici que les pages s'échangent */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
