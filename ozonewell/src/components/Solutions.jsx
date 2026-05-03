@@ -26,14 +26,14 @@ const Solutions = () => {
 
   const activites = [
     { id: 'hotel-ozone', title: 'Hôtellerie', img: hotelImg },
-    { id: 'horeca', title: 'Restaurant et Café', img: caferestImg },
+    { id: 'horeca', title: 'Restaurants et Cafés', img: caferestImg },
     { id: 'clinique', title: 'Cliniques et Hôpitaux', img: santeImg },
-    { id: 'ecole', title: 'École et Maternelle', img: schoolImg },
-    { id: 'sport', title: 'Salle de sport', img: sportImg },
+    { id: 'ecole', title: 'Établissements Scolaires', img: schoolImg },
+    { id: 'sport', title: 'Salles de sport', img: sportImg },
     { id: 'bureau', title: 'Environnement de travail', img: travailImg },
-    { id: 'coiffure', title: 'Salon de coiffure', img: coiffeurImg },
+    { id: 'coiffure', title: 'Salons de coiffure', img: coiffeurImg },
     { id: 'cuisine', title: 'Cuisine', img: cuisineImg },
-    { id: 'chambres-froides', title: 'Chambre Froide', img: froideImg },
+    { id: 'chambres-froides', title: 'Chambres Froides', img: froideImg },
   ];
 
   const applications = [

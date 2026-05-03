@@ -18,8 +18,8 @@ function HeroCarousel() {
   const slides = [
     { image: hotelImg, title: 'Hôtellerie', subtitle: SLOGAN_UNIQUE },
     { image: schoolImg, title: 'Établissements Scolaires', subtitle: SLOGAN_UNIQUE },
-    { image: cafeImg, title: 'Café-Restaurant', subtitle: SLOGAN_UNIQUE },
-    { image: sportImg, title: 'Salle de Sport', subtitle: SLOGAN_UNIQUE },
+    { image: cafeImg, title: 'Cafés-Restaurants', subtitle: SLOGAN_UNIQUE },
+    { image: sportImg, title: 'Salles de Sport', subtitle: SLOGAN_UNIQUE },
     { image: santeImg, title: 'Santé & Médical', subtitle: SLOGAN_UNIQUE },
     { image: travailImg, title: 'Environnement de Travail', subtitle: SLOGAN_UNIQUE },
     { image: commerceImg, title: 'Commerces', subtitle: SLOGAN_UNIQUE },
@@ -33,8 +33,6 @@ function HeroCarousel() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  const goToPrevious = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  const goToNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const goToSlide = (index) => setCurrentSlide(index);
 
   return (

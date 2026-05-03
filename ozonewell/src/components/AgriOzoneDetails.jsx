@@ -11,7 +11,6 @@ const AgriOzoneDetails = () => {
 
   return (
     <div className="agri-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Applications - Agriculture</p>
 
       <h1 className="agri-main-title">Ozone pour l'agriculture : plein champ, hydroponie, semis et après-récolte</h1>
 

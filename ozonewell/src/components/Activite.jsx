@@ -79,7 +79,7 @@ const Activite = () => {
               Contrairement aux parfums qui masquent, l'ozone détruit les molécules responsables des odeurs 
               pour une fraîcheur naturelle et saine dans tous vos espaces intérieurs.
             </p>
-            <button className="btn-glass" onClick={() => handleViewPDF('ODEURS.pdf')}>
+            <button className="btn-glass" onClick={() => handleViewPDF('odeurs.pdf')}>
               Visualiser la brochure
             </button>
           </div>

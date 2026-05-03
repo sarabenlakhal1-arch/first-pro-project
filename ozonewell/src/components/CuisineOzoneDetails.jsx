@@ -11,7 +11,6 @@ const CuisineOzoneDetails = () => {
 
   return (
     <div className="cuisine-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Applications - Hôtellerie & Restauration</p>
 
       <h1 className="cuisine-main-title">Installation d'un générateur d'ozone pour le secteur de l'hôtellerie-restauration</h1>
 
@@ -64,7 +63,7 @@ const CuisineOzoneDetails = () => {
 
       <div className="cuisine-footer">
         <button className="cuisine-btn-blue" onClick={() => navigate('/contact')}>
-          DEMANDER UN DEVIS PERSONNALISÉ
+          DEMANDER UN DEVIS 
         </button>
       </div>
 

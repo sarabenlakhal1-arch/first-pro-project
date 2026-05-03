@@ -11,7 +11,6 @@ const CliniqueOzoneDetails = () => {
 
   return (
     <div className="clinique-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Applications - Santé & Médical</p>
 
       <h1 className="clinique-main-title">
         Désinfection à l'ozone et filtres HEPA pour l'hygiène environnementale dans les cliniques et les hôpitaux

@@ -15,7 +15,6 @@ const HorecaOzoneDetails = () => {
 
   return (
     <div className="horeca-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Applications - HORECA</p>
 
       <h1 className="horeca-main-title">
         Hygiène environnementale et alimentaire, purificateurs d'air à ozone et à filtres HEPA pour le secteur HORECA

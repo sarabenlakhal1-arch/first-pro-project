@@ -11,9 +11,8 @@ const IndustOzoneDetails = () => {
 
   return (
     <div className="indust-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Industries - Industrie Alimentaire</p>
 
-      <h1 className="indust-main-title">Désinfection à l'ozone pour l'industrie alimentaire</h1>
+      <h1 className="indust-main-title">Désinfection à l'ozone pour l'industrie agroalimentaire</h1>
 
       {/* Section 1: Slogan et Liste */}
       <div className="indust-section-flex">

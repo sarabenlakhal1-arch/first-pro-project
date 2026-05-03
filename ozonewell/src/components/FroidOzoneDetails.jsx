@@ -11,7 +11,6 @@ const FroidOzoneDetails = () => {
 
   return (
     <div className="froid-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Solutions - Chambres Froides</p>
 
       <h1 className="froid-main-title">
         Utilisation de l'ozone dans les chambres froides <br />

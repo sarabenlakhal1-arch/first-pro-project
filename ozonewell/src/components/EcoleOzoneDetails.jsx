@@ -12,7 +12,6 @@ const EcoleOzoneDetails = () => {
 
   return (
     <div className="school-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Solutions - Écoles et Crèches</p>
 
       <h1 className="school-main-title">
         Désinfection à l'ozone et filtres HEPA pour l'hygiène environnementale dans les établissements scolaires : écoles, crèches et collèges

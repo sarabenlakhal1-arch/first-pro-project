@@ -1,44 +1,40 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-
-import logoImg from '../assets/logoozon_nobg.png';
+import logoImg from '../assets/logo-ozon2.jpeg';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        {/* Logo ajusté pour toucher le haut et le bas via CSS */}
         <div className="navbar-logo">
-          <Link to="/">
-            <img src={logoImg} alt="Ozone Well Logo" className="logo-img" />
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <img src={logoImg} alt="Ozonewell Logo" className="logo-img" />
           </Link>
         </div>
 
+        {/* Icone Menu Mobile */}
         <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
         </div>
 
+        {/* Overlay pour fermer le menu en cliquant à côté */}
         {isMenuOpen && <div className="nav-overlay" onClick={toggleMenu}></div>}
 
         <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
-          <li className="nav-item-li"><Link to="/" className="nav-link-item">Accueil</Link></li>
-          
-          {/* Changez la ligne de l'item Solutions comme ceci : */}
-            <li className="nav-item-li nav-item-solutions"> {/* Ajout de nav-item-li ici */}
-              <Link to="/solutions" className="nav-link-item">Solutions</Link> {/* nav-link-item ici */}
-
-          </li>
-
-          <li className="nav-item-li"><Link to="/documentation" className="nav-link-item">Documentation</Link></li>
-          <li className="nav-item-li"><Link to="/certificats" className="nav-link-item">Certificats</Link></li>
-          <li className="nav-item-li">
-            <Link to="/contact" className="nav-btn-contact-mobile">Contactez-nous</Link>
+          <li><Link to="/" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Accueil</Link></li>
+          <li><Link to="/solutions" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Solutions</Link></li>
+          <li><Link to="/documentation" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Documentation</Link></li>
+          <li><Link to="/certificats" className="nav-link-item" onClick={() => setIsMenuOpen(false)}>Certificats</Link></li>
+          <li>
+            {/* Texte changé de "Contactez-nous" à "Contact" */}
+            <Link to="/contact" className="nav-btn-contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </li>
         </ul>
       </div>

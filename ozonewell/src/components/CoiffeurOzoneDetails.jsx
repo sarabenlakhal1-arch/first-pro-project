@@ -12,7 +12,6 @@ const CoiffeurOzoneDetails = () => {
 
   return (
     <div className="salon-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Solutions - Salons de Coiffure & Beauté</p>
 
       <h1 className="salon-main-title">
         Désinfection à l'ozone et filtres HEPA pour l'hygiène environnementale dans les salons de coiffure et les centres de beauté

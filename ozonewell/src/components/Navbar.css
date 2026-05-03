@@ -1,19 +1,21 @@
+/* Variables de couleurs */
 :root {
-  --primary-blue: #0395ca;
-  --accent-green: #0b863b;
+  --nav-bg: #0ca4dbe2;
+  --nav-mobile-bg: #c3e9f7; /* Bleu plus clair pour le mobile */
   --text-dark: #1e293b;
-  --white: #ffffffbb;
+  --btn-blue: #0395ca;
 }
 
 .navbar {
-  background: var(--white);
-  height: 120px;
+  background: var(--nav-bg);
+  height: 126px; /* Hauteur fixe */
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 2000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 0; /* Suppression des paddings inutiles sur la barre */
 }
 
 .navbar-container {
@@ -22,31 +24,35 @@
   width: 100%;
   padding: 0 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Sépare le logo du menu/liens */
   align-items: center;
+  height: 100%;
 }
 
+/* AJUSTEMENT LOGO (PC & MOBILE) */
+.navbar-logo, 
 .navbar-logo a {
-  text-decoration: none;
+  height: 100%; /* Prend toute la hauteur de la navbar */
   display: flex;
   align-items: center;
 }
 
 .logo-img {
-  padding-top: 10px;
-  height: 180px;
+  height: 100%; /* S'ajuste exactement aux 126px de la navbar */
+  max-height: 126px; 
   width: auto;
   display: block;
-  object-fit: contain;
+  object-fit: contain; /* Garde les proportions */
 }
-.logo-bold { color: var(--primary-blue); font-weight: 800; }
-.logo-light { color: var(--accent-green); font-weight: 400; }
 
+/* LIENS NAVIGATION PC */
 .nav-links {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 35px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link-item {
@@ -58,23 +64,26 @@
 }
 
 .nav-link-item:hover {
-  color: #0b863b ;
+  color: white;
 }
 
-.nav-btn-contact-mobile {
-  background: #0395ca ;
+/* BOUTON CONTACT (RECTANGLE ARRONDI) */
+.nav-btn-contact {
+  background: var(--btn-blue);
   color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(10, 77, 146, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
 }
 
+/* ICONE MENU MOBILE (HAMBURGER) */
 .menu-icon {
   display: none;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between; /* Sépare les lignes du burger */
   width: 30px;
   height: 21px;
   cursor: pointer;
@@ -84,17 +93,21 @@
 .hamburger-line {
   width: 100%;
   height: 3px;
-  background-color: var(--primary-blue);
-  transition: all 0.3s ease;
+  background-color: var(--text-dark);
   border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
+/* ANIMATION BURGER */
 .menu-icon.open .hamburger-line:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .menu-icon.open .hamburger-line:nth-child(2) { opacity: 0; }
 .menu-icon.open .hamburger-line:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
+/* RESPONSIVE MOBILE */
 @media (max-width: 850px) {
-  .menu-icon { display: flex; }
+  .menu-icon { 
+    display: flex; 
+  }
 
   .nav-overlay {
     position: fixed;
@@ -102,8 +115,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2500;
   }
 
@@ -113,180 +125,41 @@
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: white;
+    background: var(--nav-mobile-bg);
     flex-direction: column;
     padding: 100px 30px;
-    gap: 0;
-    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    gap: 10px;
+    transition: right 0.4s ease;
     z-index: 2800;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
   }
 
   .nav-links.nav-active {
     right: 0;
   }
 
-/* --- Ajoutez ou modifiez ces règles dans votre fichier CSS --- */
-
-@media (max-width: 850px) {
-  /* On s'assure que l'item solution prend toute la largeur comme les autres */
-  .nav-item-solutions {
+  /* ÉLIMINATION DES BORDURES ET AJUSTEMENT LARGEUR */
+  .nav-links li {
     width: 100%;
-    position: relative;
-  }
-
-  /* Cachez le dropdown complexe sur mobile pour éviter les décalages, 
-     ou ajustez-le pour qu'il ne soit pas en 'absolute' */
-  .main-dropdown {
-    position: static; /* Important : pour qu'il pousse le contenu vers le bas au lieu de flotter */
-    width: 100%;
-    box-shadow: none;
-    border: none;
-    border-left: 2px solid var(--primary-blue);
-    margin-left: 20px;
-    background: #f8fafc;
-  }
-
-  /* Force l'alignement du texte 'Solutions' */
-  .nav-item-solutions .nav-link-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-/* Ajustement pour éviter que le survol n'affiche le menu sur mobile 
-   si vous ne voulez pas qu'il s'ouvre tout seul */
-@media (min-width: 851px) {
-  .nav-item-solutions:hover .main-dropdown {
-    display: block;
-  }
-}
-
-/* Correction de la classe dropdown pour la cohérence */
-.nav-link-item {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-weight: 600;
-  font-size: 15px;
-  transition: 0.3s;
-  display: block; /* S'assure que le lien prend toute la place */
-}  
-  .nav-item-li {
-    width: 100%;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: none;
   }
 
   .nav-link-item {
     display: block;
-    padding: 20px 0;
+    padding: 15px 0;
     font-size: 18px;
+    text-align: center;
     width: 100%;
   }
 
-  .nav-btn-contact-mobile {
-    margin-top: 30px;
-    display: inline-block;
+  .nav-btn-contact {
+    margin-top: 20px;
     width: 100%;
     text-align: center;
   }
 
-}
-
-@media (max-width: 768px) {
+  /* LOGO MOBILE PARFAITEMENT AJUSTÉ À LA NAVBAR (126px) */
   .logo-img {
-    height: 180px;
+    height: 126px; /* Correction : identique à la navbar */
   }
-}
-
-/* DROPDOWN LINK STYLE */
-.nav-link {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-weight: 500;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* ACCORDION DROPDOWN STYLES */
-
-.main-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 280px;
-  background: #ffffff;
-  border: 1px solid #d1d1d1;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  display: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-item-solutions:hover .main-dropdown {
-  display: block;
-}
-
-.topic-link {
-  display: block;
-  padding: 12px 20px;
-  background: #f4f7fa;
-  font-weight: 500;
-  color: #0A4D92;
-  text-decoration: none;
-  font-size: 13px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #e0e0e0;
-  transition: background 0.2s;
-}
-
-.topic_link:hover {
-  background: #0A4D92;
-  color: #ffffff;
-}
-
-.sub-level {
-  list-style: none;
-  padding: 5px 0;
-}
-
-.sub-level a, .accordion-label {
-  display: block;
-  padding: 10px 20px;
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.accordion-content {
-  list-style: none;
-  padding: 0;
-  background: #fafafa;
-  display: none;
-  border-left: 4px solid #0071e3;
-}
-
-.has-accordion:hover .accordion-content {
-  display: block;
-}
-
-.accordion-content a {
-  padding: 8px 35px;
-  font-size: 13px;
-  color: #555;
-}
-
-.sub-level a:hover, .accordion-label:hover, .accordion-content a:hover {
-  background-color: #f0f7ff;
-  color: #0071e3;
-}
-
-.has-accordion .accordion-label::after {
-  content: '▾';
-  float: right;
-  opacity: 0.5;
 }

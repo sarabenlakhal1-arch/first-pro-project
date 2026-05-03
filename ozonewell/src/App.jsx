@@ -7,7 +7,6 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Catalogue from './components/Catalogue';
 import Solutions from './components/Solutions';
-import SolutionDetail from './components/SolutionDetail';
 import AirOzoneDetails from './components/AirOzoneDetails';
 import EauOzoneDetails from './components/EauOzoneDetails';
 import IndustOzoneDetails from './components/IndustOzoneDetails';
@@ -55,7 +54,6 @@ export default function App() {
           <Route path="/solutions/coiffure" element={<CoiffeurOzoneDetails />} />
           <Route path="/solutions/chambres-froides" element={<FroidOzoneDetails />} />
 
-          <Route path="/solutions/:type" element={<SolutionDetail />} />
           <Route path="/certificats" element={<Certificats />} />
           <Route path="/documentation" element={<Documentation />} />
         </Routes>

@@ -12,7 +12,6 @@ const SportOzoneDetails = () => {
 
   return (
     <div className="sport-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Solutions - Salles de Sport</p>
 
       <h1 className="sport-main-title">
         Désinfection à l'ozone et filtres HEPA pour l'hygiène environnementale dans les salles de sport

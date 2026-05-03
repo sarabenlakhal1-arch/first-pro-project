@@ -1,77 +1,59 @@
 .top-bar {
-  background-color: #0395ca;
-  width: 100%;
-  max-height: 55px;
-  color: white;
+  /* On garde tes styles de base */
+  background-color: #74f8b0; 
+  padding: 10px 0;
+  font-size: 14px;
 }
 
 .top-bar-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  
+  /* ALIGNEMENT : Tout sur une seule ligne et centré verticalement */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 }
 
-.top-group-contacts{
-  padding-top: 0px;
-  padding-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-}
+.top-group-contacts, 
 .top-group-info {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  /* Aligne l'intérieur de chaque groupe sur une ligne */
   display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
+  align-items: center; 
+  gap: 20px; 
 }
 
-.contact-item, .info-item {
+.contact-item, 
+.info-item {
+  /* Aligne l'icône avec son texte sur la même ligne */
   display: flex;
-  align-items: center;
-  gap: 6px;
-  color: white;
+  align-items: center; 
+  gap: 8px;
+  font-weight: 600;
+  color: rgb(76, 75, 75);
   text-decoration: none;
 }
 
 .contact-icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
-.separator {
-  color: rgba(255, 255, 255, 0.4);
-}
-
+/* On garde ta classe spécifique pour le gras */
 .bold-text {
-  font-weight: 700;
+  font-weight: bold;
 }
 
-@media (max-width: 768px) {
+/* Garde les coordonnées propres sur mobile */
+@media (max-width: 900px) {
   .top-bar-container {
-    flex-direction: column-reverse; 
-    gap: 10px;
-    padding: 12px 10px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
-
-  .top-group-contacts {
-    width: 100%;
-    justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 8px;
-  }
-
-  .top-group-info {
-    width: 100%;
-    justify-content: center;
-    opacity: 0.8;
-  }
-
   .hide-mobile {
     display: none;
   }

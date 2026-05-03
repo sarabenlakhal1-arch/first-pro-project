@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './EtabOzoneDetails.css';
 
 // Importation de tes captures (place-les dans src/assets/photozon/)
-import imgEtabHero from '../assets/photozon/etab1.png'; 
+import imgEtabHero from '../assets/photozon/travail.jpeg'; 
 import imgEtabEnvironnement from '../assets/photozon/etablissement.png';
 import imgBavet from '../assets/photozon/bavet.png';
 
@@ -12,7 +12,6 @@ const EtabOzoneDetails = () => {
 
   return (
     <div className="etab-page-container">
-      <p className="breadcrumb-hint">Ozonewell - Applications - Établissements publics</p>
 
       <h1 className="etab-main-title">
         Applications de purification de l'air dans les espaces clos et désinfection des environnements intérieurs
